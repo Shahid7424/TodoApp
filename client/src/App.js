@@ -93,6 +93,14 @@ function App() {
         <button onClick={editingTaskId ? updateTask : addTask}>
           {editingTaskId ? 'Update Task' : 'Add Task'}
         </button>
+        {editingTaskId && (
+          <button onClick={() => {
+            resetNewTask();
+            setEditingTaskId(null);
+          }}>
+            Cancel Edit
+          </button>
+        )}
       </div>
 
       <ul>
